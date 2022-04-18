@@ -1,4 +1,8 @@
 import React from "react";
+import {
+    BrowserRouter as Router,
+    Link,
+  } from "react-router-dom";
 
 export default function Navbar() {
   return (
@@ -21,9 +25,14 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <Link to="/" className="nav-link active" aria-current="page">
                 Home
-              </a>
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/about" className="nav-link active" aria-current="page">
+                About
+              </Link>
             </li>
           </ul>
           <form className="d-flex">
