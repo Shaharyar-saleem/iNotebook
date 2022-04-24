@@ -1,10 +1,17 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {
     BrowserRouter as Router,
     Link,
+    useLocation,
   } from "react-router-dom";
 
 export default function Navbar() {
+  const location = useLocation()
+  let [currentLocation, setCurrentLocation] = useState("/");
+  useEffect(()=>{
+    setCurrentLocation(location.pathname);
+  }, [location])
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
@@ -25,12 +32,12 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link to="/" className="nav-link active" aria-current="page">
+              <Link to="/" className={`nav-link ${currentLocation === "/" ? 'active' : ''}`} aria-current="page">
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/about" className="nav-link active" aria-current="page">
+              <Link to="/about" className={`nav-link ${currentLocation === "/about" ? 'active' : ''}`} aria-current="page">
                 About
               </Link>
             </li>
