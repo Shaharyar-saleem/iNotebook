@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function AddNote() {
+export default function AddNote(props) {
   return (
     <div className="my-5">
         <h3 className="text-center"><i>Add Note</i></h3>
