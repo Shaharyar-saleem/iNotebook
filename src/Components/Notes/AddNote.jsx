@@ -37,8 +37,8 @@ export default function AddNote(props) {
           <input type="text" name="tag" id="tag" className="form-control my-2" onChange={handleChange} />
         </div>
 
-        <button type="submit" className="btn btn-primary btn-lg my-2" onClick={handleSubmit}>
-          Submit
+        <button type="submit" className="btn btn-success btn-lg my-2" onClick={handleSubmit}>
+          Add Note
         </button>
       </form>
     </div>

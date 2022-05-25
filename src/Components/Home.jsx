@@ -17,12 +17,14 @@ export default function Home(props) {
         </h3>
         <div className="mt-4">
           {note.map((note, key) => {
+            console.log("note:", note)
             return (
               <NoteItem
                 title={note.title}
                 description={note.description}
                 tag={note.tag}
                 key={key}
+                id={note._id}
               />
             );
           })}
